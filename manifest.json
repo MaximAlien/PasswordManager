@@ -1,0 +1,30 @@
+{
+    "name": "Password Manager",
+    "description": "Password Manager provides the ability to store and generate passwords.",
+    "version": "0.1",
+    "permissions": [
+        "tabs",
+        "<all_urls>"
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 2
+}
